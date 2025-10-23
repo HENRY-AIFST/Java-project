@@ -1,0 +1,122 @@
+// CalculatorApp.java
+// Java Programming Assignment 2
+// Project Title: Calculator Application using Method Overloading
+// Author: Rahul Bagoria
+// Semester: 3rd 
+
+import java.util.Scanner;
+
+public class CalculatorApp {
+
+    static class Calculator {
+
+        // Add two integers
+        public int add(int a, int b) {
+            return a + b;
+        }
+
+        // Add three integers
+        public int add(int a, int b, int c) {
+            return a + b + c;
+        }
+
+        // Add two doubles
+        public double add(double a, double b) {
+            return a + b;
+        }
+
+        // Subtract two integers
+        public int subtract(int a, int b) {
+            return a - b;
+        }
+
+        // Multiply two doubles
+        public double multiply(double a, double b) {
+            return a * b;
+        }
+
+        // Divide two integers with exception handling
+        public double divide(int a, int b) {
+            if (b == 0) {
+                throw new ArithmeticException("Error: Division by zero is not allowed!");
+            }
+            return (double) a / b;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Calculator calc = new Calculator();
+        int choice;
+
+        do {
+            System.out.println("\n=== Welcome to the Calculator Application ===");
+            System.out.println("1. Add Numbers");
+            System.out.println("2. Subtract Numbers");
+            System.out.println("3. Multiply Numbers");
+            System.out.println("4. Divide Numbers");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1 -> {
+                    System.out.println("\nChoose Addition Type:");
+                    System.out.println("1. Add two integers");
+                    System.out.println("2. Add three integers");
+                    System.out.println("3. Add two doubles");
+                    System.out.print("Enter choice: ");
+                    int addChoice = sc.nextInt();
+
+                    switch (addChoice) {
+                        case 1 -> {
+                            System.out.print("Enter two integers: ");
+                            int a = sc.nextInt(), b = sc.nextInt();
+                            System.out.println("Result: " + calc.add(a, b));
+                        }
+                        case 2 -> {
+                            System.out.print("Enter three integers: ");
+                            int x = sc.nextInt(), y = sc.nextInt(), z = sc.nextInt();
+                            System.out.println("Result: " + calc.add(x, y, z));
+                        }
+                        case 3 -> {
+                            System.out.print("Enter two doubles: ");
+                            double d1 = sc.nextDouble(), d2 = sc.nextDouble();
+                            System.out.println("Result: " + calc.add(d1, d2));
+                        }
+                        default -> System.out.println("Invalid choice!");
+                    }
+                }
+
+                case 2 -> {
+                    System.out.print("Enter two integers: ");
+                    int a = sc.nextInt(), b = sc.nextInt();
+                    System.out.println("Result: " + calc.subtract(a, b));
+                }
+
+                case 3 -> {
+                    System.out.print("Enter two doubles: ");
+                    double a = sc.nextDouble(), b = sc.nextDouble();
+                    System.out.println("Result: " + calc.multiply(a, b));
+                }
+
+                case 4 -> {
+                    System.out.print("Enter two integers: ");
+                    int a = sc.nextInt(), b = sc.nextInt();
+                    try {
+                        System.out.println("Result: " + calc.divide(a, b));
+                    } catch (ArithmeticException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+
+                case 5 -> System.out.println("Exiting... Thank you!");
+
+                default -> System.out.println("Invalid choice! Please try again.");
+            }
+
+        } while (choice != 5);
+
+        sc.close();
+    }
+}
