@@ -1,3 +1,9 @@
+
+// Java Programming Assignment 3
+// Project Title: Student result management system
+// Author: Rahul Bagoria
+// Semester: 3rd 
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
