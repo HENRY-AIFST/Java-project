@@ -1,7 +1,8 @@
+
 import java.util.Scanner;
 
 public class BankingApplication {
-    // Account class as static nested class
+  
     static class Account {
         private int accountNumber;
         private String accountHolderName;
