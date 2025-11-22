@@ -104,7 +104,6 @@ Space Complexity: O(n) or higher depending on implementation.
 
 Edge Cases: Must handle corner cases and possible invalid inputs.
 
-⚠️ Note: Replace placeholders for Assignment 02–04 with actual logic and complexity once the code is available.
 
 Getting Started
 Prerequisites
@@ -114,12 +113,14 @@ JDK 17 or higher
 Maven / Gradle (optional, if using build automation)
 
 Installation
+```
 git clone https://github.com/HENRY-AIFST/Java-project.git
 cd Java-project
 # Compile assignments
 javac THEORY/*.java
+```
 Usage
-
+```
 Run a specific assignment:
 
 java THEORY.assignment_01(java)
@@ -127,6 +128,7 @@ java THEORY.assignment_01(java)
 java THEORY.assignment_02
 java THEORY.assignment_03
 java THEORY.assignment_04
+```
 Testing
 
 You can test assignments by running them with sample inputs or predefined test cases included in the code.
